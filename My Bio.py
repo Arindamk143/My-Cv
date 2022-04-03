@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import  ImageTk, Image
-
+import tkinter.messagebox as tmsg
 root = Tk()
 root.geometry("1000x1000")
 root.title("Arindam Bio")
@@ -65,5 +65,19 @@ for i in range(0, 2):
 f6 = Frame(f3, width=900, height=200, pady=14, padx=22)
 Label(f6, image=photos[1], anchor="w", padx=22).pack(anchor="sw",pady=20)
 f6.pack(anchor="sw",pady=40)
+
+# Adding Massafebar and menubars
+
+def feedback():
+    print("Hi guys This Is Arindam")
+    tmsg.showinfo("CopyRight","Hi Dear All Guys This Is My CV")
+
+mainmenu = Menu(root)
+m1 = Menu(mainmenu,tearoff=0)
+m1.add_command(label="Give Me A feedback",command=feedback)
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="Help",menu=m1)
+
+
 
 root.mainloop()
